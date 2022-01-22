@@ -1,0 +1,215 @@
+[
+  {
+    "questionType": "additions",
+    "question": "2+4+8",
+    "detail": "Add all the numbers",
+    "steps": [
+      "2+4",
+      "6+8"
+    ],
+    "results": [
+      "6",
+      "14"
+    ]
+  },
+  {
+    "questionType": "additions",
+    "question": "18+9+3",
+    "detail": "Add all the numbers",
+    "steps": [
+      "18+9",
+      "27+3"
+    ],
+    "results": [
+      "27",
+      "30"
+    ]
+  },
+  {
+    "questionType": "subtraction",
+    "question": "20-16-2",
+    "detail": "Subtract all the numbers",
+    "steps": [
+      "20-16",
+      "4-2"
+    ],
+    "results": [
+      "4",
+      "2"
+    ]
+  },
+  {
+    "questionType": "subtraction",
+    "question": "13-4-7",
+    "detail": "Subtract all the numbers",
+    "steps": [
+      "13-4",
+      "9-7"
+    ],
+    "results": [
+      "9",
+      "2"
+    ]
+  },
+  {
+    "questionType": "division",
+    "question": "10/2/5",
+    "detail": "Divide all the numbers",
+    "steps": [
+      "10/2",
+      "5/5"
+    ],
+    "results": [
+      "5",
+      "1"
+    ]
+  },
+  {
+    "questionType": "division",
+    "question": "20/2/4",
+    "detail": "Divide all the numbers",
+    "steps": [
+      "20/2",
+      "10/4"
+    ],
+    "results": [
+      "10",
+      "2.5"
+    ]
+  },
+  {
+    "questionType": "multiplication",
+    "question": "12*7*6",
+    "detail": "Multiply all the numbers",
+    "steps": [
+      "12*7",
+      "84*6"
+    ],
+    "results": [
+      "84",
+      "504"
+    ]
+  },
+  {
+    "questionType": "multiplication",
+    "question": "15*7*3",
+    "detail": "Multiply all the numbers",
+    "steps": [
+      "15*7",
+      "105*3"
+    ],
+    "results": [
+      "105",
+      "315"
+    ]
+  },
+  {
+    "questionType": "mix",
+    "question": "2*21/3+4-1",
+    "detail": "Apply DBMS rule",
+    "steps": [
+      "21/3",
+      "2*7",
+      "14+4",
+      "18-1",
+      "17"
+    ],
+    "results": [
+      "7",
+      "14",
+      "18",
+      "17"
+    ]
+  },
+  {
+    "questionType": "mix",
+    "question": "5*45/5+9-6",
+    "detail": "Apply DBMS rule",
+    "steps": [
+      "45/5",
+      "5*9",
+      "45+9",
+      "54-6",
+      "48"
+    ],
+    "results": [
+      "9",
+      "45",
+      "54",
+      "48"
+    ]
+  },
+  {
+    "questionType": "quadratic",
+    "question": "x²+2x-3=0",
+    "detail": "Apply the quadratic formula",
+    "steps": [
+      "Find the multiple of first x² and last value 3 leading up to the center value 2x and set them in two sets",
+      "Now find the common values between the two sets of values between x2+3x-x-3",
+      "Now by having x(x+3)-1(x+3)=0 separate the main two set of values",
+      "Now put both (x-1) and (x+3) equals to zero and compute their values",
+      "Sending the number values to the other side"
+    ],
+    "results": [
+      "x²+3x-x-3",
+      "x(x+3)-1(x+3)",
+      "(x-1)(x+3)",
+      "x-1,x+3"
+    ]
+  },
+  {
+    "questionType": "quadratic",
+    "question": "x²+4x+1=0",
+    "detail": "Apply the quadratic formula by completing square",
+    "steps": [
+      "Add 4 on both sides to make a complete square",
+      "Now take square root on both sides of x²+4x+4=-1+4",
+      "Because 3 does not have a complete square root compute the value of x+2 = ±√3",
+      "Now compute x+2 with both types of value of √3",
+      "Send both the number values to the other side",
+      "Don't worry the answer is in fractions"
+    ],
+    "results": [
+      "x²+4x+4=-1+4",
+      "√(x+2)²=√3",
+      "x+2=±√3",
+      "x+2=√3,x+2=-√3",
+      "x=√3-2,x=-√3-2",
+      "-0.27,-3.73"
+    ]
+  },
+  {
+    "questionType": "lcm",
+    "question": "24,36",
+    "detail": "Find the least common factor",
+    "steps": [
+      "Divide 24 and 36 by 2",
+      "Divide 12 and 18 by 2",
+      "Divide 6 and 9 by 3",
+      "Multiply all the divisor numbers and remaining values",
+      "The remaining value is the answer"
+    ],
+    "results": [
+      "12,18",
+      "6,9",
+      "2,3",
+      "72"
+    ]
+  },
+  {
+    "questionType": "lcm",
+    "question": "75,45",
+    "detail": "Find the least common factor",
+    "steps": [
+      "Divide 75 and 45 by 3",
+      "Divide 25 and 15 by 5",
+      "Multiply all the divisor numbers and remaining values",
+      "The remaining value is the answer"
+    ],
+    "results": [
+      "25,15",
+      "5,3",
+      "225"
+    ]
+  }
+]

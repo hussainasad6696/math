@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Math</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="math_solver">Math Solver</string>
+    <string name="addition">Addition</string>
+    <string name="subtraction">Subtraction</string>
+    <string name="multiplication">Multiplication</string>
+    <string name="division">Division</string>
+    <string name="lcm">LCM</string>
+    <string name="hcf">HCF</string>
+    <string name="quadratic_equations">Quadratic Equations</string>
+    <string name="solution">Solution</string>
+    <string name="question">Question :</string>
+    <string name="_24_4">24*4</string>
+    <string name="step">Step :</string>
+    <string name="_0">0</string>
+    <string name="multiply_first_item_with_second">Multiply first item with second</string>
+    <string name="_24">24</string>
+    <string name="_4">4</string>
+    <string name="multiply">*</string>
+
+    <string name="btn_device">Device</string>
+    <string name="btn_cloud">Cloud</string>
+    <string name="action_gallery">Gallery</string>
+    <string name="action_camera">Camera</string>
+
+    <string name="confirm_storage">This app need to access files on your device.</string>
+    <string name="confirm_camera">This app need to access camera and files on your device.</string>
+    <string name="error_not_found">No text found</string>
+    <string name="mix">Mix</string>
+</resources>

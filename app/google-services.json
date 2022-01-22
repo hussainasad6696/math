@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "157711397469",
+    "project_id": "math-188c4",
+    "storage_bucket": "math-188c4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:157711397469:android:e1a26f12005ed5f01f93b4",
+        "android_client_info": {
+          "package_name": "com.example.math"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "157711397469-qlrjb64c16f1321cso2oumne9f09ed0s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCtnVjad3ALUKpHIviJEstCAr7kVIXEQY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "157711397469-qlrjb64c16f1321cso2oumne9f09ed0s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
