@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import com.example.math.interfaces.CloseFragmentInterface
 import com.example.math.interfaces.PermissionInterfaces
 import com.example.math.models.QuestionTypes
+import com.example.math.ui.AnswerViewFragment
 import com.example.math.ui.MainFragment
 import com.example.math.ui.QuestionsListFragment
 import com.example.math.util.PermissionUtils

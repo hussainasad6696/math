@@ -94,7 +94,7 @@
             android:layout_marginEnd="5dp"
             android:layout_marginBottom="10dp"
             android:padding="5dp"
-            app:cardBackgroundColor="#DCE8DE"
+            app:cardBackgroundColor="@color/pink"
             app:cardCornerRadius="15dp"
             app:layout_constraintBottom_toTopOf="@+id/bottomAppBar"
             app:layout_constraintTop_toBottomOf="@id/bottomLine">
@@ -134,6 +134,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="30dp"
+                android:backgroundTint="@color/green"
                 android:src="@drawable/ic_baseline_camera_alt_24"
                 app:layout_anchor="@id/bottomBar" />
 

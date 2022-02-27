@@ -22,7 +22,7 @@ class MainFragment(private val functions: FirebaseFunctions) : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        binding = DataBindingUtil.inflate(inflater,R.layout.fragment_main, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_main, container, false)
 
         iniViews()
 
@@ -31,14 +31,71 @@ class MainFragment(private val functions: FirebaseFunctions) : Fragment() {
 
     private fun iniViews() {
         mainActivity = activity as MainActivity
-        binding.addition.setOnClickListener { mainActivity.changeFragment(QuestionsListFragment(functions,QuestionTypes.ADDITION)) }
-        binding.subtraction.setOnClickListener { mainActivity.changeFragment(QuestionsListFragment(functions,QuestionTypes.SUBTRACTION)) }
-        binding.division.setOnClickListener { mainActivity.changeFragment(QuestionsListFragment(functions,QuestionTypes.DIVISION)) }
-        binding.multiplication.setOnClickListener { mainActivity.changeFragment(QuestionsListFragment(functions,QuestionTypes.MULTIPLICATION)) }
-        binding.lcm.setOnClickListener { mainActivity.changeFragment(QuestionsListFragment(functions,QuestionTypes.LCM)) }
-        binding.hcf.setOnClickListener { mainActivity.changeFragment(QuestionsListFragment(functions,QuestionTypes.HCF)) }
-        binding.equations.setOnClickListener { mainActivity.changeFragment(QuestionsListFragment(functions,QuestionTypes.QUADRATIC)) }
-        binding.mix.setOnClickListener { mainActivity.changeFragment(QuestionsListFragment(functions,QuestionTypes.MIX)) }
+        binding.addition.setOnClickListener {
+            mainActivity.changeFragment(
+                QuestionsListFragment(
+                    functions,
+                    QuestionTypes.ADDITION
+                )
+            )
+        }
+        binding.subtraction.setOnClickListener {
+            mainActivity.changeFragment(
+                QuestionsListFragment(
+                    functions,
+                    QuestionTypes.SUBTRACTION
+                )
+            )
+        }
+        binding.division.setOnClickListener {
+            mainActivity.changeFragment(
+                QuestionsListFragment(
+                    functions,
+                    QuestionTypes.DIVISION
+                )
+            )
+        }
+        binding.multiplication.setOnClickListener {
+            mainActivity.changeFragment(
+                QuestionsListFragment(functions, QuestionTypes.MULTIPLICATION)
+            )
+        }
+        binding.lcm.setOnClickListener {
+            mainActivity.changeFragment(
+                QuestionsListFragment(
+                    functions,
+                    QuestionTypes.LCM
+                )
+            )
+        }
+        binding.hcf.setOnClickListener {
+            mainActivity.changeFragment(
+                QuestionsListFragment(
+                    functions,
+                    QuestionTypes.HCF
+                )
+            )
+        }
+        binding.equations.setOnClickListener {
+            mainActivity.changeFragment(
+                QuestionsListFragment(
+                    functions,
+                    QuestionTypes.QUADRATIC
+                )
+            )
+        }
+        binding.mix.setOnClickListener {
+            mainActivity.changeFragment(
+                QuestionsListFragment(
+                    functions,
+                    QuestionTypes.MIX
+                )
+            )
+        }
+
+        binding.search.setOnClickListener {
+            mainActivity.changeFragment(AnswerViewFragment(binding.searchView.query.toString()))
+        }
     }
 
 }

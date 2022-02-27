@@ -83,10 +83,24 @@ class QuestionsFragment(
                     operandOne = if(questionTypes != QuestionTypes.QUADRATIC) readOperands(steps, "before") else steps,
                     operandTwo = if(questionTypes != QuestionTypes.QUADRATIC) readOperands(steps, "after") else "",
                     operator = readOperands(steps, ""),
-                    detail = question.detail
+                    detail = question.detail,
+                    result = if (question.results[index] != null) question.results[index] else "",
+                    viewType =  0
                 )
             )
         }
+
+        adapter.addDataToList(
+            StepAnswerModel(
+                index = adapter.listSize,
+                operandOne = "",
+                operandTwo = "",
+                operator = "",
+                detail = "",
+                result = "",
+                viewType =  1
+            )
+        )
 
         binding.cameraFab.setOnClickListener {
             val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)

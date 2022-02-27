@@ -8,10 +8,9 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.math.R
 import com.example.math.models.StepAnswerModel
-import kotlinx.coroutines.CoroutineScope
-import kotlin.coroutines.CoroutineContext
 
-class StepsAnswerAdapter(private val context: Context): RecyclerView.Adapter<StepsAnswerAdapter.ViewHolder>() {
+class StepsAnswerAdapter(private val context: Context) :
+    RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private val list = ArrayList<StepAnswerModel>()
     private var currentIndex = 0
@@ -20,16 +19,29 @@ class StepsAnswerAdapter(private val context: Context): RecyclerView.Adapter<Ste
         return currentIndex
     }
 
-    fun currentIndex(index: Int){
+    fun currentIndex(index: Int) {
         currentIndex += index
     }
 
-    fun addDataToList(stepAnswerModel: StepAnswerModel){
+    fun addDataToList(stepAnswerModel: StepAnswerModel) {
         list.add(stepAnswerModel)
         notifyItemChanged(list.size - 1)
     }
 
-    class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
+    class ViewHolderAllData(view: View) : RecyclerView.ViewHolder(view) {
+        private val textView: TextView = view.findViewById(R.id.allData)
+        fun bind(list: ArrayList<StepAnswerModel>) {
+            list.forEach {
+                textView.append("Step: ${it.index} \n")
+                textView.append("${it.detail} \n")
+                textView.append("${it.operandOne} ${it.operator} ${it.operandTwo} \n")
+                if (it.result != "")
+                    textView.append("Result: ${it.result} \n")
+            }
+        }
+    }
+
+    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         private val stepNumber: TextView = view.findViewById(R.id.stepNumber)
         private val detail: TextView = view.findViewById(R.id.detail)
         private val operandOne: TextView = view.findViewById(R.id.operandOne)
@@ -41,18 +53,42 @@ class StepsAnswerAdapter(private val context: Context): RecyclerView.Adapter<Ste
             operandOne.text = stepAnswerModel.operandOne
             operandTwo.text = stepAnswerModel.operandTwo
             operator.text = stepAnswerModel.operator
+
+            if (stepAnswerModel.detail.contains("quadratic")) {
+                operandOne.textSize = 12f
+                operandTwo.textSize = 12f
+            } else {
+                operandOne.textSize = 24f
+                operandTwo.textSize = 24f
+            }
         }
     }
 
     val listSize: Int
-    get() = list.size
+        get() = list.size
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(LayoutInflater.from(context).inflate(R.layout.steps_answer_view,parent,false))
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+        return when (viewType) {
+            0 -> ViewHolder(
+                LayoutInflater.from(context).inflate(R.layout.steps_answer_view, parent, false)
+            )
+            1 -> ViewHolderAllData(
+                LayoutInflater.from(context).inflate(R.layout.view_holder_all_view, parent, false)
+            )
+            else -> ViewHolder(
+                LayoutInflater.from(context).inflate(R.layout.steps_answer_view, parent, false)
+            )
+        }
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(list[position])
+    override fun getItemViewType(position: Int): Int = list[position].viewType
+
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        when (getItemViewType(position)) {
+            0 -> (holder as ViewHolder).bind(list[position])
+            1 -> (holder as ViewHolderAllData).bind(list)
+        }
+
     }
 
     override fun getItemCount(): Int = list.size

@@ -8,6 +8,24 @@
         android:layout_height="match_parent"
         tools:context=".ui.MainFragment">
 
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:translationY="-12dp"
+            app:cardBackgroundColor="@color/green"
+            app:cardCornerRadius="25dp"
+            app:layout_constraintBottom_toTopOf="@id/guidelineHori5"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="30dp"
+                android:paddingBottom="30dp"
+                android:src="@drawable/math" />
+
+        </androidx.cardview.widget.CardView>
+
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guidelineVert50"
             android:layout_width="wrap_content"
@@ -20,42 +38,42 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.05" />
+            app:layout_constraintGuide_percent="0.15" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guidelineHori20"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.2" />
+            app:layout_constraintGuide_percent="0.3" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guidelineHori35"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.35" />
+            app:layout_constraintGuide_percent="0.45" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guidelineHori50"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.5" />
+            app:layout_constraintGuide_percent="0.6" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guidelineHori65"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.65" />
+            app:layout_constraintGuide_percent="0.75" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/addition"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_margin="10dp"
-            app:cardBackgroundColor="#28282B"
+            app:cardBackgroundColor="@color/yellow"
             app:cardCornerRadius="15dp"
             app:layout_constraintBottom_toTopOf="@+id/guidelineHori20"
             app:layout_constraintEnd_toStartOf="@+id/guidelineVert50"
@@ -67,7 +85,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical|center_horizontal"
                 android:text="@string/addition"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -78,7 +96,7 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_margin="10dp"
-            app:cardBackgroundColor="#28282B"
+            app:cardBackgroundColor="@color/green"
             app:cardCornerRadius="15dp"
             app:layout_constraintBottom_toTopOf="@+id/guidelineHori20"
             app:layout_constraintEnd_toEndOf="parent"
@@ -90,7 +108,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical|center_horizontal"
                 android:text="@string/subtraction"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -101,7 +119,7 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_margin="10dp"
-            app:cardBackgroundColor="#28282B"
+            app:cardBackgroundColor="@color/pink"
             app:cardCornerRadius="15dp"
             app:layout_constraintBottom_toTopOf="@+id/guidelineHori35"
             app:layout_constraintEnd_toStartOf="@+id/guidelineVert50"
@@ -113,7 +131,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical|center_horizontal"
                 android:text="@string/multiplication"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -124,7 +142,7 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_margin="10dp"
-            app:cardBackgroundColor="#28282B"
+            app:cardBackgroundColor="@color/purple"
             app:cardCornerRadius="15dp"
             app:layout_constraintBottom_toTopOf="@+id/guidelineHori35"
             app:layout_constraintEnd_toEndOf="parent"
@@ -136,7 +154,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical|center_horizontal"
                 android:text="@string/division"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -170,7 +188,7 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_margin="10dp"
-            app:cardBackgroundColor="#28282B"
+            app:cardBackgroundColor="@color/yellow"
             app:cardCornerRadius="15dp"
             app:layout_constraintBottom_toTopOf="@+id/guidelineHori50"
             app:layout_constraintEnd_toEndOf="parent"
@@ -182,7 +200,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical|center_horizontal"
                 android:text="@string/hcf"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -193,7 +211,7 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_margin="10dp"
-            app:cardBackgroundColor="#28282B"
+            app:cardBackgroundColor="@color/green"
             app:cardCornerRadius="15dp"
             app:layout_constraintBottom_toTopOf="@+id/guidelineHori65"
             app:layout_constraintEnd_toStartOf="@+id/guidelineVert50"
@@ -205,7 +223,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical|center_horizontal"
                 android:text="@string/quadratic_equations"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -216,7 +234,7 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_margin="10dp"
-            app:cardBackgroundColor="#28282B"
+            app:cardBackgroundColor="@color/grey"
             app:cardCornerRadius="15dp"
             app:layout_constraintBottom_toTopOf="@+id/guidelineHori65"
             app:layout_constraintEnd_toEndOf="parent"
@@ -233,6 +251,50 @@
                 android:textStyle="bold" />
 
         </androidx.cardview.widget.CardView>
+
+        <SearchView
+            android:id="@+id/searchView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@color/green"
+            android:backgroundTint="@color/green"
+            android:closeIcon="@drawable/ic_baseline_close_24"
+            android:queryHint="@string/two_plus_two"
+            android:searchIcon="@drawable/ic_baseline_search_24"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/search"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guidelineHori65" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            app:cardBackgroundColor="#765FFB"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="@id/searchView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/searchView">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="20dp"
+                android:paddingBottom="10dp"
+                android:text="@string/search"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+
+        </androidx.cardview.widget.CardView>
+
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
