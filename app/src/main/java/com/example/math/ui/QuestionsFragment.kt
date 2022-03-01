@@ -39,6 +39,7 @@ class QuestionsFragment(
     private var answerTries = 3
     private lateinit var mainActivity: MainActivity
     private lateinit var closeFragmentInterface: CloseFragmentInterface
+    private lateinit var currentStepAnswerModel: StepAnswerModel
     private val activityResultLauncher =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
             if (it.resultCode == RESULT_OK) {
@@ -70,7 +71,9 @@ class QuestionsFragment(
     private fun initViews() {
         mainActivity = activity as MainActivity
         closeFragmentInterface = mainActivity.closeFragmentInterface()
-        adapter = StepsAnswerAdapter(requireContext())
+        adapter = StepsAnswerAdapter(requireContext()) {
+            onCameraFabClicked(it)
+        }
         binding.answerStepsRecyclerview.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         binding.answerStepsRecyclerview.adapter = this.adapter
@@ -103,13 +106,18 @@ class QuestionsFragment(
         )
 
         binding.cameraFab.setOnClickListener {
-            val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-            activityResultLauncher.launch(intent)
+
         }
 
         binding.backPressed.setOnClickListener {
             closeFragmentInterface.closeFragmentListener(questionTypes)
         }
+    }
+
+    private fun onCameraFabClicked(it: StepAnswerModel) {
+        val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+        activityResultLauncher.launch(intent)
+        currentStepAnswerModel = it
     }
 
     private fun readOperands(stepsData: String, subStringFor: String): String {
@@ -145,13 +153,13 @@ class QuestionsFragment(
                     closeFragmentInterface.closeFragmentListener(questionTypes)
                 }
                 dialog.dismiss()
-            }
+            }.setIcon(R.drawable.ic_baseline_navigate_next_24)
             .setNegativeButton("No") { dialog, _ -> dialog.dismiss() }.show()
     }
 
     override fun onSuccessTextRecognitionListener(text: String) {
             val index = adapter.currentIndex()
-            val s = question.results[index]
+            val s = if (!::currentStepAnswerModel.isInitialized) question.results[index] else currentStepAnswerModel.result
             if (text.contains(s)) {
                 answerTries = 3
                 onSuccessDialog(index = index, answer = s)
@@ -170,8 +178,10 @@ class QuestionsFragment(
             .setTitle("Better luck next time")
             .setMessage("The correct is $answer.")
             .setPositiveButton("Close") { dialog, _ ->
+                binding.answerStepsRecyclerview.smoothScrollToPosition(adapter.currentIndex() + 1)
                 dialog.dismiss()
-            }.show()
+            }.setIcon(R.drawable.ic_baseline_navigate_next_24)
+            .show()
     }
 
     override fun onFilerTextRecognitionListener(text: String) {

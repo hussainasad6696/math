@@ -8,8 +8,9 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.math.R
 import com.example.math.models.StepAnswerModel
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
-class StepsAnswerAdapter(private val context: Context) :
+class StepsAnswerAdapter(private val context: Context,private val onCameraFabClicked: (StepAnswerModel) -> Unit) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private val list = ArrayList<StepAnswerModel>()
@@ -47,7 +48,8 @@ class StepsAnswerAdapter(private val context: Context) :
         private val operandOne: TextView = view.findViewById(R.id.operandOne)
         private val operandTwo: TextView = view.findViewById(R.id.operandTwo)
         private val operator: TextView = view.findViewById(R.id.operator)
-        fun bind(stepAnswerModel: StepAnswerModel) {
+        private val cameraFab: FloatingActionButton = view.findViewById(R.id.cameraFab)
+        fun bind(stepAnswerModel: StepAnswerModel, onCameraFabClicked: (StepAnswerModel) -> Unit) {
             stepNumber.text = stepAnswerModel.index.toString()
             detail.text = stepAnswerModel.detail
             operandOne.text = stepAnswerModel.operandOne
@@ -60,6 +62,10 @@ class StepsAnswerAdapter(private val context: Context) :
             } else {
                 operandOne.textSize = 24f
                 operandTwo.textSize = 24f
+            }
+
+            cameraFab.setOnClickListener {
+                onCameraFabClicked(stepAnswerModel)
             }
         }
     }
@@ -85,7 +91,7 @@ class StepsAnswerAdapter(private val context: Context) :
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when (getItemViewType(position)) {
-            0 -> (holder as ViewHolder).bind(list[position])
+            0 -> (holder as ViewHolder).bind(list[position],onCameraFabClicked)
             1 -> (holder as ViewHolderAllData).bind(list)
         }
 
