@@ -1,14 +1,14 @@
 <resources>
-    <string name="app_name">Math</string>
+    <string name="app_name">Adaptive Math</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="math_solver">Math Solver</string>
+    <string name="math_solver">Adaptive Math Solver</string>
     <string name="addition">Exercise 1</string>
     <string name="subtraction">Exercise 2</string>
     <string name="multiplication">Exercise 3</string>
     <string name="division">Exercise 4</string>
     <string name="lcm">Exercise 5</string>
-    <string name="hcf">Exercise 6</string>
-    <string name="quadratic_equations">Exercise 7</string>
+<!--    <string name="hcf">Exercise 6</string>-->
+    <string name="quadratic_equations">Exercise 6</string>
     <string name="solution">Solution</string>
     <string name="question">Question :</string>
     <string name="_24_4">24*4</string>

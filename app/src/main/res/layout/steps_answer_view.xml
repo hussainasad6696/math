@@ -140,11 +140,21 @@
         android:id="@+id/cameraFab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/green"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="15dp"
-        app:layout_constraintTop_toBottomOf="@+id/operandTwoCard"
-        android:src="@drawable/ic_baseline_camera_alt_24" />
+        android:backgroundTint="@color/green"
+        android:src="@drawable/ic_baseline_camera_alt_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/operandTwoCard" />
 
+    <TextView
+        android:id="@+id/hint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/grey"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cameraFab" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

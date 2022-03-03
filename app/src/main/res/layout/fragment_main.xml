@@ -188,6 +188,7 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_margin="10dp"
+            android:visibility="gone"
             app:cardBackgroundColor="@color/yellow"
             app:cardCornerRadius="15dp"
             app:layout_constraintBottom_toTopOf="@+id/guidelineHori50"
@@ -199,7 +200,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical|center_horizontal"
-                android:text="@string/hcf"
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -213,10 +213,10 @@
             android:layout_margin="10dp"
             app:cardBackgroundColor="@color/green"
             app:cardCornerRadius="15dp"
-            app:layout_constraintBottom_toTopOf="@+id/guidelineHori65"
-            app:layout_constraintEnd_toStartOf="@+id/guidelineVert50"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/guidelineHori50">
+            app:layout_constraintBottom_toTopOf="@+id/guidelineHori50"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/guidelineVert50"
+            app:layout_constraintTop_toBottomOf="@+id/guidelineHori35">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -238,7 +238,7 @@
             app:cardCornerRadius="15dp"
             app:layout_constraintBottom_toTopOf="@+id/guidelineHori65"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/guidelineVert50"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/guidelineHori50">
 
             <TextView
@@ -293,7 +293,6 @@
 
 
         </androidx.cardview.widget.CardView>
-
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,6 +3,10 @@
     "questionType": "additions",
     "question": "2+4+8",
     "detail": "Add all the numbers",
+    "hint": [
+      "Add first to second",
+      "Add second to third"
+    ],
     "steps": [
       "2+4",
       "6+8"
@@ -16,6 +20,10 @@
     "questionType": "additions",
     "question": "18+9+3",
     "detail": "Add all the numbers",
+    "hint": [
+      "Add first to second",
+      "Add second to third"
+    ],
     "steps": [
       "18+9",
       "27+3"
@@ -26,9 +34,47 @@
     ]
   },
   {
+    "questionType": "additions",
+    "question": "4+2+6",
+    "detail": "Add all the numbers",
+    "hint": [
+      "Add first to second",
+      "Add second to third"
+    ],
+    "steps": [
+      "4+2",
+      "6+6"
+    ],
+    "results": [
+      "6",
+      "12"
+    ]
+  },
+  {
+    "questionType": "additions",
+    "question": "19+3+1",
+    "detail": "Add all the numbers",
+    "hint": [
+      "Add first to second",
+      "Add second to third"
+    ],
+    "steps": [
+      "19+3",
+      "22+1"
+    ],
+    "results": [
+      "22",
+      "23"
+    ]
+  },
+  {
     "questionType": "subtraction",
     "question": "20-16-2",
     "detail": "Subtract all the numbers",
+    "hint": [
+      "Subtract first to second",
+      "Subtract second to third"
+    ],
     "steps": [
       "20-16",
       "4-2"
@@ -42,6 +88,10 @@
     "questionType": "subtraction",
     "question": "13-4-7",
     "detail": "Subtract all the numbers",
+    "hint": [
+      "Subtract first to second",
+      "Subtract second to third"
+    ],
     "steps": [
       "13-4",
       "9-7"
@@ -55,6 +105,10 @@
     "questionType": "division",
     "question": "10/2/5",
     "detail": "Divide all the numbers",
+    "hint": [
+      "Divide first to second",
+      "Divide second to third"
+    ],
     "steps": [
       "10/2",
       "5/5"
@@ -68,6 +122,10 @@
     "questionType": "division",
     "question": "20/2/4",
     "detail": "Divide all the numbers",
+    "hint": [
+      "Divide first to second",
+      "Divide second to third"
+    ],
     "steps": [
       "20/2",
       "10/4"
@@ -81,6 +139,10 @@
     "questionType": "multiplication",
     "question": "12*7*6",
     "detail": "Multiply all the numbers",
+    "hint": [
+      "Multiply first to second",
+      "Multiply second to third"
+    ],
     "steps": [
       "12*7",
       "84*6"
@@ -94,6 +156,10 @@
     "questionType": "multiplication",
     "question": "15*7*3",
     "detail": "Multiply all the numbers",
+    "hint": [
+      "Multiply first to second",
+      "Multiply second to third"
+    ],
     "steps": [
       "15*7",
       "105*3"
@@ -107,6 +173,12 @@
     "questionType": "mix",
     "question": "2*21/3+4-1",
     "detail": "Apply DBMS rule",
+    "hint": [
+      "Divide the two numbers",
+      "Multiply the answer with the new value",
+      "Add the result",
+      "Subtract the result"
+    ],
     "steps": [
       "21/3",
       "2*7",
@@ -125,6 +197,12 @@
     "questionType": "mix",
     "question": "5*45/5+9-6",
     "detail": "Apply DBMS rule",
+    "hint": [
+      "Divide the two numbers",
+      "Multiply the answer with the new value",
+      "Add the result",
+      "Subtract the result"
+    ],
     "steps": [
       "45/5",
       "5*9",
@@ -140,9 +218,92 @@
     ]
   },
   {
+    "questionType": "mix",
+    "question": "(2+4)-(3*5)/(6-5)",
+    "detail": "Apply DBMS rule",
+    "hint": [
+      "Solver the bracket values",
+      "Add and subtract them",
+      "Match the result"
+    ],
+    "steps": [
+      "Apply DBMS and solver bracket values 2+4, 3*5, 6-5",
+      "Divide the two values",
+      "Remaining is the answer"
+    ],
+    "results": [
+      "(6)-(15)/(1)",
+      "-9/1",
+      "-9"
+    ]
+  },
+  {
+    "questionType": "mix",
+    "question": "(3+4)-(7+2)",
+    "detail": "Apply DBMS rule",
+    "hint": [
+      "Solver the bracket values",
+      "Add and subtract them",
+      "Match the result"
+    ],
+    "steps": [
+      "Apply DBMS and solver bracket values 3+4, 7+2",
+      "Subtract the remaining 7 and 9",
+      "Remaining is the answer"
+    ],
+    "results": [
+      "7-9",
+      "-2"
+    ]
+  },
+  {
+    "questionType": "mix",
+    "question": "(15-4)*(3+7)",
+    "detail": "Apply DBMS rule",
+    "hint": [
+      "Solver the bracket values",
+      "Add and subtract them",
+      "Match the result"
+    ],
+    "steps": [
+      "Apply DBMS and solver bracket values 15-4, 3+7",
+      "Multiply the remaining 9 and 10",
+      "Remaining is the answer"
+    ],
+    "results": [
+      "9*10",
+      "90"
+    ]
+  },
+  {
+    "questionType": "mix",
+    "question": "(15*4)*(3/1)",
+    "detail": "Apply DBMS rule",
+    "hint": [
+      "Solver the bracket values",
+      "Add and subtract them",
+      "Match the result"
+    ],
+    "steps": [
+      "Apply DBMS and solver bracket values 15*4, 3/7",
+      "Add the remaining 60 and 3",
+      "Remaining is the answer"
+    ],
+    "results": [
+      "60+3",
+      "63"
+    ]
+  },
+  {
     "questionType": "quadratic",
     "question": "x²+2x-3=0",
     "detail": "Apply the quadratic formula",
+    "hint": [
+      "Find the multiple of first and last value with last common value",
+      "Find a common value from the result",
+      "Place both the values against other side of equal",
+      "Take the numbers to the other side"
+    ],
     "steps": [
       "Find the multiple of first x² and last value 3 leading up to the center value 2x and set them in two sets",
       "Now find the common values between the two sets of values between x2+3x-x-3",
@@ -161,6 +322,12 @@
     "questionType": "quadratic",
     "question": "x²+4x+1=0",
     "detail": "Apply the quadratic formula by completing square",
+    "hint": [
+      "Find the multiple of first and last value with last common value",
+      "Find a common value from the result",
+      "Place both the values against other side of equal",
+      "Take the numbers to the other side"
+    ],
     "steps": [
       "Add 4 on both sides to make a complete square",
       "Now take square root on both sides of x²+4x+4=-1+4",
@@ -182,6 +349,13 @@
     "questionType": "lcm",
     "question": "24,36",
     "detail": "Find the least common factor",
+    "hint": [
+      "Find the least common factor between the two values",
+      "Divide both the value and place their remaining factor to the side",
+      "Repeat the same step",
+      "Multiply all the remainders together",
+      "Check the answer"
+    ],
     "steps": [
       "Divide 24 and 36 by 2",
       "Divide 12 and 18 by 2",
@@ -200,6 +374,13 @@
     "questionType": "lcm",
     "question": "75,45",
     "detail": "Find the least common factor",
+    "hint": [
+      "Find the least common factor between the two values",
+      "Divide both the value and place their remaining factor to the side",
+      "Repeat the same step",
+      "Multiply all the remainders together",
+      "Check the answer"
+    ],
     "steps": [
       "Divide 75 and 45 by 3",
       "Divide 25 and 15 by 5",

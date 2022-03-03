@@ -6,6 +6,7 @@ import android.content.Intent
 import android.graphics.Bitmap
 import android.os.Bundle
 import android.provider.MediaStore
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -25,6 +26,7 @@ import com.example.math.models.QuestionsItem
 import com.example.math.models.StepAnswerModel
 import com.example.math.util.ImageDetectionUtils
 import com.google.firebase.functions.FirebaseFunctions
+import java.lang.Exception
 
 
 class QuestionsFragment(
@@ -79,19 +81,25 @@ class QuestionsFragment(
         binding.answerStepsRecyclerview.adapter = this.adapter
 
         binding.question.text = question.question
-        question.steps.forEachIndexed { index, steps ->
-            adapter.addDataToList(
-                StepAnswerModel(
-                    index = index+1,
-                    operandOne = if(questionTypes != QuestionTypes.QUADRATIC) readOperands(steps, "before") else steps,
-                    operandTwo = if(questionTypes != QuestionTypes.QUADRATIC) readOperands(steps, "after") else "",
-                    operator = readOperands(steps, ""),
-                    detail = question.detail,
-                    result = if (question.results[index] != null) question.results[index] else "",
-                    viewType =  0
+        try {
+            question.steps.forEachIndexed { index, steps ->
+                adapter.addDataToList(
+                    StepAnswerModel(
+                        index = index+1,
+                        operandOne = if(questionTypes != QuestionTypes.QUADRATIC) readOperands(steps, "before") else steps,
+                        operandTwo = if(questionTypes != QuestionTypes.QUADRATIC) readOperands(steps, "after") else "",
+                        operator = readOperands(steps, ""),
+                        detail = question.detail,
+                        result = question.results[index],
+                        hint = question.hint[index],
+                        viewType =  0
+                    )
                 )
-            )
+            }
+        }catch (e: Exception){
+            Log.e("TAG", "initViews: $e")
         }
+
 
         adapter.addDataToList(
             StepAnswerModel(
@@ -101,6 +109,7 @@ class QuestionsFragment(
                 operator = "",
                 detail = "",
                 result = "",
+                hint = "",
                 viewType =  1
             )
         )

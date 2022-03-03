@@ -49,13 +49,14 @@ class StepsAnswerAdapter(private val context: Context,private val onCameraFabCli
         private val operandTwo: TextView = view.findViewById(R.id.operandTwo)
         private val operator: TextView = view.findViewById(R.id.operator)
         private val cameraFab: FloatingActionButton = view.findViewById(R.id.cameraFab)
+        private val hint: TextView = view.findViewById(R.id.hint)
         fun bind(stepAnswerModel: StepAnswerModel, onCameraFabClicked: (StepAnswerModel) -> Unit) {
             stepNumber.text = stepAnswerModel.index.toString()
             detail.text = stepAnswerModel.detail
             operandOne.text = stepAnswerModel.operandOne
             operandTwo.text = stepAnswerModel.operandTwo
             operator.text = stepAnswerModel.operator
-
+            hint.text = stepAnswerModel.hint
             if (stepAnswerModel.detail.contains("quadratic")) {
                 operandOne.textSize = 12f
                 operandTwo.textSize = 12f

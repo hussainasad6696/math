@@ -5,5 +5,6 @@ data class QuestionsItem(
     val question: String,
     val questionType: String,
     val results: List<String>,
-    val steps: List<String>
+    val steps: List<String>,
+    val hint: List<String>
 )

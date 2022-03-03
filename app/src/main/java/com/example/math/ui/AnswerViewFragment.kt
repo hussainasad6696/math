@@ -21,7 +21,7 @@ class AnswerViewFragment(private val query: String) : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        binding = DataBindingUtil.inflate(inflater,R.layout.fragment_answer_view, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_answer_view, container, false)
 
         SimpleAPIFetcher().fetchRequestOnIOThread(onPreExecute = {
             binding.progressBar.visibility = View.VISIBLE
@@ -29,7 +29,9 @@ class AnswerViewFragment(private val query: String) : Fragment() {
         },
             onPostExecute = {
                 binding.progressBar.visibility = View.GONE
-                binding.detail.setImageBitmap(it)
+                if (it != null)
+                    binding.detail.setImageBitmap(it)
+                else binding.noData.visibility = View.VISIBLE
             })
 
         return binding.root

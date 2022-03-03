@@ -7,5 +7,6 @@ class StepAnswerModel(
     val operator: String,
     val detail: String,
     val result: String,
+    val hint: String,
     val viewType: Int
 )
