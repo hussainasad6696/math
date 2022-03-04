@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Adaptive Math</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="math_solver">Adaptive Math Solver</string>
+    <string name="math_solver">Adaptive Math Learning</string>
     <string name="addition">Exercise 1</string>
     <string name="subtraction">Exercise 2</string>
     <string name="multiplication">Exercise 3</string>

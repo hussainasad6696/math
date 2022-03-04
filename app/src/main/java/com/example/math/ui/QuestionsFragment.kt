@@ -86,8 +86,8 @@ class QuestionsFragment(
                 adapter.addDataToList(
                     StepAnswerModel(
                         index = index+1,
-                        operandOne = if(questionTypes != QuestionTypes.QUADRATIC) readOperands(steps, "before") else steps,
-                        operandTwo = if(questionTypes != QuestionTypes.QUADRATIC) readOperands(steps, "after") else "",
+                        operandOne = if(questionTypes != QuestionTypes.QUADRATIC && questionTypes != QuestionTypes.LCM) readOperands(steps, "before") else steps,
+                        operandTwo = if(questionTypes != QuestionTypes.QUADRATIC && questionTypes != QuestionTypes.LCM) readOperands(steps, "after") else "",
                         operator = readOperands(steps, ""),
                         detail = question.detail,
                         result = question.results[index],
@@ -130,7 +130,7 @@ class QuestionsFragment(
     }
 
     private fun readOperands(stepsData: String, subStringFor: String): String {
-        val operatorArray = arrayOf("+", "-", "*", "/")
+        val operatorArray = arrayOf("+", "-", "*", "/",",")
         var stringData = ""
         operatorArray.forEach {
             if (stepsData.contains(it)) {

@@ -102,6 +102,40 @@
     ]
   },
   {
+    "questionType": "subtraction",
+    "question": "16-16-20",
+    "detail": "Subtract all the numbers",
+    "hint": [
+      "Subtract first to second",
+      "Subtract second to third"
+    ],
+    "steps": [
+      "16-16",
+      "0-20"
+    ],
+    "results": [
+      "0",
+      "-20"
+    ]
+  },
+  {
+    "questionType": "subtraction",
+    "question": "12-4-1",
+    "detail": "Subtract all the numbers",
+    "hint": [
+      "Subtract first to second",
+      "Subtract second to third"
+    ],
+    "steps": [
+      "12-4",
+      "8-1"
+    ],
+    "results": [
+      "8",
+      "7"
+    ]
+  },
+  {
     "questionType": "division",
     "question": "10/2/5",
     "detail": "Divide all the numbers",
@@ -136,6 +170,40 @@
     ]
   },
   {
+    "questionType": "division",
+    "question": "4/2/1",
+    "detail": "Divide all the numbers",
+    "hint": [
+      "Divide first to second",
+      "Divide second to third"
+    ],
+    "steps": [
+      "4/2",
+      "2/1"
+    ],
+    "results": [
+      "2",
+      "1"
+    ]
+  },
+  {
+    "questionType": "division",
+    "question": "0/12/6",
+    "detail": "Divide all the numbers",
+    "hint": [
+      "Divide first to second",
+      "Divide second to third"
+    ],
+    "steps": [
+      "0/12",
+      "0/6"
+    ],
+    "results": [
+      "0",
+      "0"
+    ]
+  },
+  {
     "questionType": "multiplication",
     "question": "12*7*6",
     "detail": "Multiply all the numbers",
@@ -167,6 +235,40 @@
     "results": [
       "105",
       "315"
+    ]
+  },
+  {
+    "questionType": "multiplication",
+    "question": "1*2*1",
+    "detail": "Multiply all the numbers",
+    "hint": [
+      "Multiply first to second",
+      "Multiply second to third"
+    ],
+    "steps": [
+      "1*2",
+      "2*1"
+    ],
+    "results": [
+      "2",
+      "2"
+    ]
+  },
+  {
+    "questionType": "multiplication",
+    "question": "5*2*5",
+    "detail": "Multiply all the numbers",
+    "hint": [
+      "Multiply first to second",
+      "Multiply second to third"
+    ],
+    "steps": [
+      "5*2",
+      "10*5"
+    ],
+    "results": [
+      "10",
+      "50"
     ]
   },
   {
