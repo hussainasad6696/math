@@ -10,6 +10,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.databinding.DataBindingUtil
@@ -86,8 +87,10 @@ class QuestionsFragment(
                 adapter.addDataToList(
                     StepAnswerModel(
                         index = index+1,
-                        operandOne = if(questionTypes != QuestionTypes.QUADRATIC && questionTypes != QuestionTypes.LCM) readOperands(steps, "before") else steps,
-                        operandTwo = if(questionTypes != QuestionTypes.QUADRATIC && questionTypes != QuestionTypes.LCM) readOperands(steps, "after") else "",
+                        operandOne = if(questionTypes != QuestionTypes.QUADRATIC && questionTypes != QuestionTypes.LCM
+                            && questionTypes != QuestionTypes.MIX) readOperands(steps, "before") else steps,
+                        operandTwo = if(questionTypes != QuestionTypes.QUADRATIC && questionTypes != QuestionTypes.LCM
+                            && questionTypes != QuestionTypes.MIX) readOperands(steps, "after") else "",
                         operator = readOperands(steps, ""),
                         detail = question.detail,
                         result = question.results[index],
@@ -144,26 +147,52 @@ class QuestionsFragment(
         return stringData
     }
 
-    private fun onSuccessDialog(answer: String, index: Int) {
-        AlertDialog.Builder(requireContext())
-            .setTitle("Good work")
-            .setMessage("$answer is the correct answer.")
-            .setPositiveButton("Next ->") { dialog, _ ->
-                if (adapter.listSize > index) {
-                    adapter.currentIndex(1)
-                    binding.answerStepsRecyclerview.smoothScrollToPosition(index + 1)
-                }
-                else {
-                    Toast.makeText(
-                        requireContext(),
-                        "Congratulation you have completed the question",
-                        Toast.LENGTH_LONG
-                    ).show()
-                    closeFragmentInterface.closeFragmentListener(questionTypes)
-                }
-                dialog.dismiss()
-            }.setIcon(R.drawable.ic_baseline_navigate_next_24)
-            .setNegativeButton("No") { dialog, _ -> dialog.dismiss() }.show()
+//    private fun onSuccessDialog(answer: String, index: Int) {
+//        AlertDialog.Builder(requireContext())
+//            .setTitle("Good work")
+//            .setMessage("$answer is the correct answer.")
+//            .setPositiveButton("Next ->") { dialog, _ ->
+//                if (adapter.listSize > index) {
+//                    adapter.currentIndex(1)
+//                    binding.answerStepsRecyclerview.smoothScrollToPosition(index + 1)
+//                }
+//                else {
+//                    Toast.makeText(
+//                        requireContext(),
+//                        "Congratulation you have completed the question",
+//                        Toast.LENGTH_LONG
+//                    ).show()
+//                    closeFragmentInterface.closeFragmentListener(questionTypes)
+//                }
+//                dialog.dismiss()
+//            }.setIcon(R.drawable.ic_baseline_navigate_next_24)
+//            .setNegativeButton("No") { dialog, _ -> dialog.dismiss() }.show()
+//    }
+//
+    private fun onSuccessDialog(answer: String, index: Int){
+        val dialogBuilder = androidx.appcompat.app.AlertDialog.Builder(requireContext())
+        val inflater = this.layoutInflater
+        val dialogView: View = inflater.inflate(R.layout.verification, null)
+        dialogBuilder.setView(dialogView)
+        val alertDialog = dialogBuilder.create()
+        dialogView.findViewById<TextView>(R.id.title).text = "Good work"
+        dialogView.findViewById<TextView>(R.id.text).text = "$answer is the correct answer."
+        dialogView.findViewById<TextView>(R.id.next).setOnClickListener {
+            if (adapter.listSize > index) {
+                adapter.currentIndex(1)
+                binding.answerStepsRecyclerview.smoothScrollToPosition(index + 1)
+            }
+            else {
+                Toast.makeText(
+                    requireContext(),
+                    "Congratulation you have completed the question",
+                    Toast.LENGTH_LONG
+                ).show()
+                closeFragmentInterface.closeFragmentListener(questionTypes)
+            }
+            alertDialog.dismiss()
+        }
+        alertDialog.show()
     }
 
     override fun onSuccessTextRecognitionListener(text: String) {
